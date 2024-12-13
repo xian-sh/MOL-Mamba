@@ -30,7 +30,12 @@ We need to prepare data before either pretraining or finetuning. This process wi
 
 ## Env
 
-`pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html einops`
+```
+pip install rdkit-pypi
+conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
+conda config --add channels pytorch
+conda install pytorch-geometric -c rusty1s -c conda-forge
+```
 
 ## 🌐 Usage
 
