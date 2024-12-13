@@ -6,7 +6,7 @@ _Hefei University of Technology, Hefei Comprehensive National Science Center, An
 
 #### [\[arXiv\]](xxx) | [\[PDF\]](xx)
 
-![test](https://github.com/VUT-HFUT/EulerMormer/blob/main/fig/net-1.png 'The Network of EulerMormer')
+![test](assert/fig_mamba-fusion1.pdf)
 
 ## ✒️:Abstract
 
