@@ -6,7 +6,7 @@ _Hefei University of Technology, Hefei Comprehensive National Science Center, An
 
 #### [\[arXiv\]](xxx) | [\[PDF\]](xx)
 
-![test](assert/fig_mamba-fusion1_00.png)
+![test](assert/fig_mamba-fusion1_01.png)
 
 ## ✒️:Abstract
 
