@@ -6,11 +6,27 @@ _Hefei University of Technology, Hefei Comprehensive National Science Center, An
 
 #### [\[arXiv\]](xxx) | [\[PDF\]](xx)
 
-![test](assert/fig_mamba-fusion1_01.png)
 
-## ✒️:Abstract
+
+## Abstract
 
 Molecular representation learning plays a crucial role in various downstream tasks, such as molecular property prediction and drug design. To accurately represent molecules, Graph Neural Networks (GNNs) and Graph Transformers (GTs) have shown potential in the realm of self-supervised pre-training. However, existing approaches often overlook the relationship between molecular structure and electronic information, as well as the internal semantic reasoning within molecules. This omission of fundamental chemical knowledge in graph semantics leads to incomplete molecular representations, missing the integration of structural and electronic data. To address these issues, we introduce MOL-Mamba, a framework that enhances molecular representation by combining structural and electronic insights. MOL-Mamba consists of an Atom & Fragment Mamba-Graph (MG) for hierarchical structural reasoning and a Mamba-Transformer (MT) fuser for integrating molecular structure and electronic correlation learning. Additionally, we propose a Structural Distribution Collaborative Training and E-semantic Fusion Training framework to further enhance molecular representation learning. Extensive experiments demonstrate that MOL-Mamba outperforms state-of-the-art baselines across eleven chemical-biological molecular datasets. 
+
+
+## Approach
+
+![test](assert/fig_mamba-fusion1_01.png)
+
+    The pre-training framework of our approach MOL-Mamba (Molecular Mamba). It consists of three modules:
+    1. fragment-level graph $GNN_F$; 
+    2. atom-level structural reasoning Mamba-graph (MG);
+    3. a molecular structural & electronic Mamba-Transformer (MT) fuser.
+    
+    We implement two pre-training stages: 
+    1. molecular structure learning with the Distribution Collaborative Training;
+    2. E-semantic Fusion Training is conducted for molecular structural & electronic fusion learning.
+
+
 
 ---
 
