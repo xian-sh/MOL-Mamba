@@ -1,6 +1,6 @@
 # MOL-Mamba: Enhancing Molecular Representation with Structural & Electronic Insights
 
-AAAI 2025.
+The paper is accepted by AAAI 2025.
 
 _Hefei University of Technology, Hefei Comprehensive National Science Center, Anhui Zhonghuitong Technology Co., Ltd._
 
@@ -16,17 +16,6 @@ Molecular representation learning plays a crucial role in various downstream tas
 ## Approach
 
 ![test](assert/fig_mamba-fusion1_01.png)
-
-    The pre-training framework of our approach MOL-Mamba (Molecular Mamba). It consists of three modules:
-    1. fragment-level graph $GNN_F$; 
-    2. atom-level structural reasoning Mamba-graph (MG);
-    3. a molecular structural & electronic Mamba-Transformer (MT) fuser.
-    
-    We implement two pre-training stages: 
-    1. molecular structure learning with the Distribution Collaborative Training;
-    2. E-semantic Fusion Training is conducted for molecular structural & electronic fusion learning.
-
-
 
 ---
 
