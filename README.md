@@ -21,11 +21,51 @@ Molecular representation learning plays a crucial role in various downstream tas
 
 ## Data preparation
 
-We need to prepare data before either pretraining or finetuning. This process will create and store a molecular graph and a fragment graph for each molecule based on a vocabulary of fragments.
+### Pretraining data: Geometric Ensemble Of Molecules (GEOM)
+
+```bash
+mkdir -p GEOM/raw
+mkdir -p GEOM/processed
+```
+
+- GEOM: [Paper](https://arxiv.org/pdf/2006.05531v3.pdf), [GitHub](https://github.com/learningmatter-mit/geom)
+
+- Data Download:
+  
+  ```bash
+  wget https://dataverse.harvard.edu/api/access/datafile/4327252
+  mv 4327252 rdkit_folder.tar.gz
+  tar -xvf rdkit_folder.tar.gz
+  ```
+  
+  or do the following if you are using slurm system
+
+      cp rdkit_folder.tar.gz $SLURM_TMPDIR
+      cd $SLURM_TMPDIR
+      tar -xvf rdkit_folder.tar.gz
+
+- over 430k molecules
+
+  - 304,466 species contain experimental data for the inhibition of various pathogens
+
+  - 133,258 are species from the QM9
+
+### Chem Dataset
 
 ```
- cd datasets 
- python loader_pretrain.py --root <output data path> --data_file_path <raw data path>
+wget http://snap.stanford.edu/gnn-pretrain/data/chem_dataset.zip
+unzip chem_dataset.zip
+mv dataset molecule_datasets
+```
+
+### Making Data
+
+We need to prepare data before either pretraining or finetuning. This process will create and store a molecular graph and a fragment graph for each molecule based on a vocabulary of fragments. 
+
+```
+cd datasets
+python loader_geom.py
+python loader_downstream.py
 ```
 
 ## Env
@@ -37,24 +77,12 @@ conda config --add channels pytorch
 conda install pytorch-geometric -c rusty1s -c conda-forge
 ```
 
-## 🌐 Usage
+## Training
 
-### ⚙ Network Architecture
+```
+python train_class.py
+```
 
-Our EulerMormer is implemented in `model/magnet.py`.
-
-- For **Config:** `config.py`
-
-- For **train:** `python main.py`
-
-- For **test video:** `python test_video.py`
-
-[Demo Baby](https://github.com/VUT-HFUT/EulerMormer/blob/main/fig/baby.avi)
-[Demo Drum](https://github.com/VUT-HFUT/EulerMormer/blob/main/fig/drum.avi)
-[Demo Cattoy](https://github.com/VUT-HFUT/EulerMormer/blob/main/fig/cattoy.avi)
-
-## 🔖:Citation
-
-If you found this code useful please consider citing our [paper](xxxx):
-
-    xxx
+## LICENSE
+Many parts of the implementations are borrowed from [GraphFP](https://github.com/lvkd84/GraphFP).
+Our codes are under [MIT](https://opensource.org/licenses/MIT) license.
