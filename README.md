@@ -21,31 +21,12 @@ Molecular representation learning plays a crucial role in various downstream tas
 
 ## Data preparation
 
-- For **train datasets** from [Oh et al. ECCV 2018](https://github.com/12dmodel/deep_motion_mag), see the official repository [here](https://drive.google.com/drive/folders/19K09QLouiV5N84wZiTPUMdoH9-UYqZrX?usp=sharing).
+We need to prepare data before either pretraining or finetuning. This process will create and store a molecular graph and a fragment graph for each molecule based on a vocabulary of fragments.
 
-- For **Real-world datatsets**, we used three settings:
-
-  - [Static Dataset](https://drive.google.com/drive/folders/1Bm3ItPLhRxRYp-dQ1vZLCYNPajKqxZ1a)
-
-  - [Dynamic Dataset](https://drive.google.com/drive/folders/1t5u8Utvmu6gnxs90NLUIfmIX0_5D3WtK)
-
-  - [Fabric Dataset](http://www.visualvibrometry.com/cvpr2015/dataset.html) from [Davis et al. CVPR 2015 && TPAMI](http://www.visualvibrometry.com/publications/visvib_pami.pdf)
-
-- Real-world videos (or any self-prepared videos) need to be configured via the following:
-
-  - Check the settings of val_dir in **config.py** and modify it if necessary.
-
-  - To convert the **Real-world video** into frames:
-    `mkdir VIDEO_NAME && ffmpeg -i VIDEO_NAME.mp4 -f image2 VIDEO_NAME/%06d.png`
-
-    eg, `mkdir ./val_baby && ffmpeg -i ./baby.avi -f image2 ./val_baby/%06d.png`
-
-> Tips: ffmpeg can also be installed by conda.
-
-- Modify the frames into **frameA/frameB/frameC**:
-  `python make_frameACB.py `(remember adapt the 'if' at the beginning of the program to select videos.)
-
-> Tips: Thanks to a fellow friend [Peng Zheng](https://github.com/ZhengPeng7/motion_magnification_learning-based) for the help!
+```
+ cd datasets 
+ python loader_pretrain.py --root <output data path> --data_file_path <raw data path>
+```
 
 ## Env
 
