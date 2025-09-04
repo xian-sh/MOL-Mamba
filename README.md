@@ -4,7 +4,7 @@ The paper is accepted by AAAI 2025.
 
 _Hefei University of Technology, Hefei Comprehensive National Science Center, Anhui Zhonghuitong Technology Co., Ltd._
 
-#### [\[arXiv\]](xxx) | [\[PDF\]](xx)
+#### [\[arXiv\]](https://arxiv.org/abs/2412.16483) | [\[PDF\]](https://ojs.aaai.org/index.php/AAAI/article/view/32009)
 
 
 
